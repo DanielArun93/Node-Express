@@ -2,6 +2,7 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.port || 3000;
 var app = express();
 
 app.set('view engine','hbs');
@@ -59,12 +60,12 @@ app.get('/about', (req, res) => {
     });
 })
 
-app.listen(3000,(err) => {
+app.listen(port,(err) => {
 if(err){
     console.log(err);
 }
 else{
-    console.log("Server opened at Port 3000");
+    console.log(`Server opened at Port ${port}`);
 }
 });
 
